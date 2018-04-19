@@ -1,0 +1,3 @@
+debian/manpages/nitropayd.1
+debian/manpages/nitropay.conf.5
+debian/manpages/nitropay-cli.1

@@ -1,0 +1,22 @@
+[Unit]
+Description=NitroPay's distributed currency daemon
+After=network.target
+
+[Service]
+User=nitropaycore
+Group=nitropaycore
+
+Type=forking
+PIDFile=/var/lib/nitropayd/nitropayd.pid
+ExecStart=/usr/bin/nitropayd -daemon -pid=/var/lib/nitropayd/nitropayd.pid \
+-conf=/etc/nitropaycore/nitropay.conf -datadir=/var/lib/nitropayd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

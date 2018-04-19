@@ -1,0 +1,6 @@
+usr/local/bin/nitropay-qt usr/bin
+share/pixmaps/nitropay32.xpm usr/share/pixmaps
+share/pixmaps/nitropay16.xpm usr/share/pixmaps
+share/pixmaps/nitropay128.png usr/share/pixmaps
+debian/nitropay-qt.desktop usr/share/applications
+debian/nitropay-qt.protocol usr/share/kde4/services/

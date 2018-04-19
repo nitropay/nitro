@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=NitroPay
+Comment=NitroPay P2P Cryptocurrency
+Comment[fr]=NitroPay, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=NitroPay, eşten eşe kriptografik sanal para birimi
+Exec=nitropay-qt %u
+Terminal=false
+Type=Application
+Icon=nitropay128
+MimeType=x-scheme-handler/nitropay;
+Categories=Office;Finance;
