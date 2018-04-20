@@ -137,13 +137,13 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1523811034, 829049, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1524242035, 692057, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000091c7f7e3dc0e85d8536fdf848ed6a921b0aa76d8ec87611098357a09f39"));
-        assert(genesis.hashMerkleRoot == uint256S("0x38fdf22cc538444b44f6e8b9a554db79ea9b84d0bec5a3a0d9e6bd175021ea6b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000e56e56eee7ab86f34907d351d533aa00a9e5a6780139df6b5c004c21318"));
+        assert(genesis.hashMerkleRoot == uint256S("0xfed0f0d1930edbc42801d00a312190373c39ba395a3a30f4b19fb40bdf6c5950"));
 
-        vSeeds.push_back(CDNSSeedData("174.138.2.91", "174.138.2.91"));
-        vSeeds.push_back(CDNSSeedData("198.199.88.135", "198.199.88.135"));
+        vSeeds.push_back(CDNSSeedData("node01.nitropay.cash", "node01.nitropay.cash"));
+        vSeeds.push_back(CDNSSeedData("node02.nitropay.cash", "node02.nitropay.cash"));
 
         // NitroPay addresses start with 'N'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
@@ -173,8 +173,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of           
-            ( 0, uint256S("0x0000091c7f7e3dc0e85d8536fdf848ed6a921b0aa76d8ec87611098357a09f39")),
-            1523811034, // * UNIX timestamp of last checkpoint block
+            ( 0, uint256S("0x00000e56e56eee7ab86f34907d351d533aa00a9e5a6780139df6b5c004c21318")),
+            1524242035, // * UNIX timestamp of last checkpoint block
             1,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             5000        // * estimated number of transactions per day after checkpoint
