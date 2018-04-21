@@ -51,7 +51,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "NitroPay - Your payment gateway live chain.";
+    const char* pszTimestamp = "NitroPay - Your payment gateway live chain today.";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -137,13 +137,13 @@ public:
         nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1524242035, 692057, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1524293083, 54097, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000e56e56eee7ab86f34907d351d533aa00a9e5a6780139df6b5c004c21318"));
-        assert(genesis.hashMerkleRoot == uint256S("0xfed0f0d1930edbc42801d00a312190373c39ba395a3a30f4b19fb40bdf6c5950"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000004b340db7c9eae6df868dd1dd7341a1b10ea11358ce6e92f5954907d9a7d"));
+        assert(genesis.hashMerkleRoot == uint256S("0xfce91c5fedf0af529c7b90ea752db3ade3654a555f35283c4c3c687ede682356"));
 
-        vSeeds.push_back(CDNSSeedData("node01.nitropay.cash", "node01.nitropay.cash"));
-        vSeeds.push_back(CDNSSeedData("node02.nitropay.cash", "node02.nitropay.cash"));
+        vSeeds.push_back(CDNSSeedData("nodeone.nitropay.cash", "nodeone.nitropay.cash"));
+        vSeeds.push_back(CDNSSeedData("nodetwo.nitropay.cash", "nodetwo.nitropay.cash"));
 
         // NitroPay addresses start with 'N'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
@@ -173,8 +173,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of           
-            ( 0, uint256S("0x00000e56e56eee7ab86f34907d351d533aa00a9e5a6780139df6b5c004c21318")),
-            1524242035, // * UNIX timestamp of last checkpoint block
+            ( 0, uint256S("0x000004b340db7c9eae6df868dd1dd7341a1b10ea11358ce6e92f5954907d9a7d")),
+            1524293083, // * UNIX timestamp of last checkpoint block
             1,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             5000        // * estimated number of transactions per day after checkpoint
